@@ -24,11 +24,12 @@ for i in range(1, items):
         dpTable[i, j] = min(dpTable[i-1, j], dpTable[i-1, j-values[i]] + weights[i])
 
 
-print(dpTable)
+
 # get best
 result=0
 for j in range(1, vmax + 1):
     if (dpTable[items-1, vmax-j] <= backpack) and (result < dpTable[items-1, vmax-j]):
         result = dpTable[items-1, vmax-j]
 
-print(result)
+#print(dpTable)
+print("the total weight of your backpack that yields maximum profit is: {}".format(result))
